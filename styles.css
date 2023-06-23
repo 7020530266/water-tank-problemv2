@@ -1,0 +1,52 @@
+*{
+    margin: 0; 
+    padding:0; 
+    box-sizing: border-box;
+    
+  }
+  
+  .container-fluid{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5rem;    
+      background-color: rgb(131, 224, 142);
+  flex-wrap: wrap;
+  
+      
+  } 
+  
+  /* .svg{
+   
+    display: block;
+    margin: auto;
+  } */
+  
+    .login-wrapper{
+      width:80vw;
+      text-align: center;
+      display:flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      color:black;
+      border-radius: 4rem;  
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
+    }
+  
+    h3{
+      margin-top: 3rem;
+    }
+  
+    .Input-top{margin-top: 1rem;
+      display:flex;
+      flex-direction: column;
+    }
+  
+    .Input-top button{
+      margin-top: 0.5rem;
+    }
+  
+    .col{margin-top: 1rem}

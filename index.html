@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="login-wrapper">
+        <h3>Water Tank Problem</h3>
+        <div class="Input-top">
+        <!-- <input
+          type="text"
+          id="myText"
+          value=""
+          placeholder="Write a String E.g 0400060640"
+          required
+        /> -->
+        <div class="mb-3">
+          <input type="text" value=""
+          placeholder="Write a String E.g 0400060640"
+          required class="form-control" id="myText" aria-describedby="emailHelp">
+        </div>
+        <button type="button" class="btn btn-primary btn-sm" onclick="myFunction()" >click to procced</button>
+      </div>
+        <div class="col">
+          <div class="row">
+            <h4>Problem Array</h4>
+            <p id="demo"></p>
+            <div id="svgInput"></div>
+          </div>
+          <div class="row">
+            <h4>Output</h4>
+            <p id="demoOutput"></p>
+            <div id="svgOutput"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>

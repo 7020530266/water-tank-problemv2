@@ -1,32 +1,38 @@
 function myFunction() {
   var x = document.getElementById("myText").value;
-  document.getElementById("demo").innerHTML = x.split("");
-  const waterLevels1 = x.split("");
+  document.getElementById("demo").innerHTML = x.split(",");
+  const waterLevels1 = x.split(",");
+
+  let validate = x.split(",");
+  let validateComma = x.split("").filter((n) => {
+    return n === ",";
+  });
 
   let empty = [];
   let valid = waterLevels1.map(function (n) {
-    if (isNaN(n)) {
+    if (isNaN(parseInt(n))) {
       empty.push("1");
     }
   });
-  console.log(empty);
-  if (empty.length > 0) {
-    alert("Enter Only Number");
+
+  if (empty.length > 0 || waterLevels1.length < 2) {
+    alert(
+      "Enter Only Number or Use comma should not be more than digits or input should be more than one integer with comma seperator"
+    );
   } else {
-    myFunction1();
+    if (validate.length === validateComma.length + 1) {
+      myFunction1();
+    }
   }
 
   function myFunction1() {
-    const waterLevels = calculateWaterLevels(x.split(""));
-    console.log(waterLevels, "1");
-    let maxEle = Math.max(...x.split("")) + 1;
-    console.log(maxEle, "3");
+    const waterLevels = calculateWaterLevels(x.split(","));
+    let maxEle = Math.max(...x.split(",")) + 1;
     let waterContent = waterLevels.reduce((a, b) => a + b, 0);
 
-    console.log(waterContent, "2");
     document.getElementById("demoOutput").innerHTML = waterContent;
-    const svg = createSVG(x.split(""), waterLevels);
-    const svgOut = createSVGOut(x.split(""), waterLevels);
+    const svg = createSVG(x.split(","), waterLevels);
+    const svgOut = createSVGOut(x.split(","), waterLevels);
 
     // Function to calculate water levels
     function calculateWaterLevels(arr) {
@@ -63,8 +69,9 @@ function myFunction() {
     function createSVG(arr, waterLevels) {
       let svgInput = document.getElementById("svgInput");
       let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      let heightS = 30 * maxEle + "px";
       svg.setAttribute("width", "100%");
-      svg.setAttribute("height", "100vh");
+      svg.setAttribute("height", heightS);
       // svg.setAttribute("style", "border:1px solid red");
       svgInput.appendChild(svg);
 
